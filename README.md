@@ -20,8 +20,12 @@
   
   
 ==============
-***([my tool box for js ](https://github.com/Bik-Top/tool_box/tree/master/tools)
+***[my tool box for js ](https://github.com/Bik-Top/tool_box/tree/master/tools)
+
 [my tool box for js - _Fasad](https://github.com/Bik-Top/tool_box/blob/master/tools/_Fasad.js)
+
 [my tool box for js - _Fasad](https://github.com/Bik-Top/tool_box/blob/master/tools/_Factory.js)
+
 [my tool box for js - _Fasad](https://github.com/Bik-Top/tool_box/blob/master/tools/_Mediator.js)
+
 [my tool box for js - _Fasad](https://github.com/Bik-Top/tool_box/blob/master/tools/_Singleton.js)
