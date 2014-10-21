@@ -20,7 +20,7 @@
   
   
 ==============
-***[my tool box for js ](https://github.com/Bik-Top/tool_box/tree/master/tools)
+[***my tool box for js***](https://github.com/Bik-Top/tool_box/tree/master/tools)
 
 [my tool box for js - _Fasad](https://github.com/Bik-Top/tool_box/blob/master/tools/_Fasad.js)
 
