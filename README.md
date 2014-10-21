@@ -31,3 +31,7 @@
 [ _Singleton](https://github.com/Bik-Top/tool_box/blob/master/tools/_Singleton.js)
 
 ==============
+
+[ insert_style](https://github.com/Bik-Top/tool_box/blob/master/tools/insert_style.js)
+
+[ attach_style_link](https://github.com/Bik-Top/tool_box/blob/master/tools/attach_style_link.js)
