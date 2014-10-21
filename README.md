@@ -8,4 +8,4 @@
   
   
 =================================================  
-[my tool box for js](http://bik-top.github.io/tool_box.io)
+[my tool box for js](http://bik-top.github.io/tool_box/)
