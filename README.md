@@ -61,6 +61,6 @@
 
 [toSearchString](https://github.com/Bik-Top/tool_box/blob/master/simple/toSearchString.js)
 
-[TOTAl_part_1](https://github.com/Bik-Top/tool_box/blob/master/simple/TOTAl_part_1.js)
-[TOTAl_part_2](https://github.com/Bik-Top/tool_box/blob/master/simple/TOTAl_part_2.js)
+***[TOTAl_part_1](https://github.com/Bik-Top/tool_box/blob/master/simple/TOTAl_part_1.js)*** //
+***[TOTAl_part_2](https://github.com/Bik-Top/tool_box/blob/master/simple/TOTAl_part_2.js) ***
 
