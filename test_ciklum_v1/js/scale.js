@@ -2,37 +2,45 @@
  * Created by BikTop on 08.11.2014.
  */
 window.onload = (function () {
-   nodeKill(document.querySelector('.wrapper'));
+
+
+   document.body.innerHTML = '<div id="topSec" style="background: #00f;"></div>' +
+      '<div id="wrapping" style="background: #0f0;">' +
+      '<div id="gameCanvas" style="background: #f0f;"> <img id="image1" class="image" src="https://fbcdn-photos-g-a.akamaihd.net/hphotos-ak-xpa1/t39.2082-0/p528x396/851538_506458892778613_1885463861_n.jpg" alt="Image"/></div>' +
+      '</div>' +
+      '<div id="ssBar" style="background: #f00;"></div>'
+
+
+   resizeGame()  ;
+
 });
-function nodeKill(node) {
-   node.parentNode.removeChild(node);
-}
 
+function resizeGame() {
+   var wrapping = document.getElementById('wrapping');
+   var widthToHeight = 4 / 3;
+   var newWidth = window.innerWidth;
+   var newHeight = window.innerHeight;
+   var newWidthToHeight = newWidth / newHeight;
 
-
-function getJ(url, callback) {
-   var httpRequest; // создаём наш XMLHttpRequest-объект
-   if (window.XMLHttpRequest) {
-      httpRequest = new XMLHttpRequest();
-   } else if (window.ActiveXObject) {
-      // для дурацкого Internet Explorer'а
-      httpRequest = new
-         ActiveXObject("Microsoft.XMLHTTP");
+   if (newWidthToHeight > widthToHeight) {
+      newWidth = newHeight * widthToHeight;
+      wrapping.style.height = newHeight + 'px';
+      wrapping.style.width = newWidth + 'px';
+   } else {
+      newHeight = newWidth / widthToHeight;
+      wrapping.style.width = newWidth + 'px';
+      wrapping.style.height = newHeight + 'px';
    }
-   httpRequest.onreadystatechange = function () {
-      // встраиваем функцию проверки статуса нашего запроса
-      // это вызывается при каждом изменении статуса
-      if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-         callback.call(httpRequest.responseXML); // вызываем колбек
-      }
-   };
-   httpRequest.open('GET', url);
-   httpRequest.send();
+
+   wrapping.style.marginTop = (-newHeight / 2) + 'px';
+   wrapping.style.marginLeft = (-newWidth / 2) + 'px';
+
+   var gameCanvas = document.getElementById('gameCanvas');
+   gameCanvas.width = newWidth;
+   gameCanvas.height = newHeight;
 }
-// вызываем функцию
-getJ("ajax/ads.json", function () {
-   console.log(this);
-});
-console.log("это выполнится до вышеуказанного колбека");
+
+window.addEventListener('resize', resizeGame, false);
+window.addEventListener('orientationchange', resizeGame, false);
 
 
