@@ -2,6 +2,7 @@
  * Created by BikTop on 08.11.2014.
  */
 window.onload=(function(){
+   document.querySelector('.wrapper').rem
 });
 
 

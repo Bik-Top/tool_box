@@ -1,0 +1,43 @@
+{"ads": [
+   {
+      "data": {
+         "ad_shares": {
+            "enabled": true,
+            "value": 0
+         },
+         "image_url": "http://i.loopme.me/9538acaf65f41f7f.png",
+         "share_url": "http://loopme.me/go2/blcgx76m0ed300ri3syja4w0tw",
+         "delay": 3000,
+         "ad_hides": {
+            "enabled": true,
+            "value": 0
+         },
+         "type": "IMAGE",
+         "click_url": "http://loopme.me/go2/blcgx76m0ed300ri3syja4w0tw",
+         "ad_likes": {
+            "enabled": true,
+            "value": 1
+         },
+         "download_btn_color": "#00AF33",
+         "id": "blcgx76m0ed300ri3syja4w0tw"
+      },
+      "beacons": {
+         "ad_show": "http://loopme.me/api/v2/events?et=AD_SHOW&id=blcgx76m0ed300ri3syja4w0tw",
+         "ad_like": "http://loopme.me/api/v2/events?et=AD_LIKE&id=blcgx76m0ed300ri3syja4w0tw",
+         "ad_hide": "http://loopme.me/api/v2/events?et=AD_HIDE&id=blcgx76m0ed300ri3syja4w0tw",
+         "ad_share": "http://loopme.me/api/v2/events?et=AD_SHARE&id=blcgx76m0ed300ri3syja4w0tw",
+         "video_start": "http://loopme.me/api/v2/events?et=VIDEO_STARTS&id=blcgx76m0ed300ri3syja4w0tw",
+         "video_time": "http://loopme.me/api/v2/events?et=VIDEO_TIMES&id=blcgx76m0ed300ri3syja4w0tw",
+         "video_complete": "http://loopme.me/api/v2/events?et=VIDEO_COMPLETES&id=blcgx76m0ed300ri3syja4w0tw"
+      }
+   }
+],
+   "version": "v0.2.213",
+   "session": {
+      "si": "blcgx76m",
+      "": {
+         "inbox_open": "http://loopme.me/api/v2/events?et=INBOX_OPEN&rid=blcgx76m&id=blcgx76m0ed300ri3syja4w0tw",
+         "ad_close": "http://loopme.me/api/v2/events?et=AD_CLOSE&rid=blcgx76m&id="
+      }
+   }
+}
