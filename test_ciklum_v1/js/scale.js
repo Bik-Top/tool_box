@@ -1,36 +1,38 @@
 /**
  * Created by BikTop on 08.11.2014.
  */
-window.onload=(function(){
-   document.querySelector('.wrapper').rem
+window.onload = (function () {
+   nodeKill(document.querySelector('.wrapper'));
 });
-
-
-function resizeGame() {
-  var gameArea = document.querySelector('.container');
-  var widthToHeight = 4 / 3;
-  var newWidth = window.innerWidth;
-  var newHeight = window.innerHeight;
-  var newWidthToHeight = newWidth / newHeight;
-
-  if (newWidthToHeight > widthToHeight) {
-    newWidth = newHeight * widthToHeight;
-    gameArea.style.height = newHeight + 'px';
-    gameArea.style.width = newWidth + 'px';
-  } else {
-    newHeight = newWidth / widthToHeight;
-    gameArea.style.width = newWidth + 'px';
-    gameArea.style.height = newHeight + 'px';
-  }
-
-  gameArea.style.marginTop = (-newHeight / 2) + 'px';
-  gameArea.style.marginLeft = (-newWidth / 2) + 'px';
-
-  var gameCanvas = document.querySelector('.container');
-  gameCanvas.width = newWidth;
-  gameCanvas.height = newHeight;
+function nodeKill(node) {
+   node.parentNode.removeChild(node);
 }
 
 
-window.addEventListener('resize', resizeGame, false);
-window.addEventListener('orientationchange', resizeGame, false);
+
+function getJ(url, callback) {
+   var httpRequest; // создаём наш XMLHttpRequest-объект
+   if (window.XMLHttpRequest) {
+      httpRequest = new XMLHttpRequest();
+   } else if (window.ActiveXObject) {
+      // для дурацкого Internet Explorer'а
+      httpRequest = new
+         ActiveXObject("Microsoft.XMLHTTP");
+   }
+   httpRequest.onreadystatechange = function () {
+      // встраиваем функцию проверки статуса нашего запроса
+      // это вызывается при каждом изменении статуса
+      if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+         callback.call(httpRequest.responseXML); // вызываем колбек
+      }
+   };
+   httpRequest.open('GET', url);
+   httpRequest.send();
+}
+// вызываем функцию
+getJ("ajax/ads.json", function () {
+   console.log(this);
+});
+console.log("это выполнится до вышеуказанного колбека");
+
+
