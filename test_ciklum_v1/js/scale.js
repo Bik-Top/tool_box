@@ -7,40 +7,37 @@ window.onload = (function () {
     '<div id="imgPlace" style="background: #f0f;"> <img id="image1" class="image" src="https://fbcdn-photos-g-a.akamaihd.net/hphotos-ak-xpa1/t39.2082-0/p528x396/851538_506458892778613_1885463861_n.jpg" alt="Image"/></div>' +
     '</div>' +
     '<div id="ssBar" style="background: #f00;"></div>';*/
-
-
-   var wrapping, imgPlace, headerBar, footerBar;
-
-   headerBar = newElem('div', {
-      id: 'headerBar',
-      style: 'position: absolute; width: 100%; height: 8%; top: 0; opacity: 0.8;'
-   });
-   wrapping = newElem('div', {
+   append(open_var.headerBar);
+   append(open_var.wrapping);
+   open_var.wrapping.appendChild(open_var.imgPlace);
+   open_var.imgPlace.appendChild(open_var.ig);
+   append(open_var.footerBar);
+   resizeGame();
+});
+window.open_var = {
+   wrapping: newElem('div', {
       id: 'wrapping',
       style: ' position: absolute; top: 50%; left: 50%;'
-   });
-   imgPlace = newElem('div', {
+   }),
+   imgPlace: newElem('div', {
       id: 'imgPlace',
       style: ' width: 100%; height: 100%;'
-   });
-   ig = newElem('img', {
-      src:'https://fbcdn-photos-g-a.akamaihd.net/hphotos-ak-xpa1/t39.2082-0/p528x396/851538_506458892778613_1885463861_n.jpg',
+   }),
+   headerBar: newElem('div', {
+      id: 'headerBar',
+      style: 'position: absolute; width: 100%; height: 8%; top: 0; opacity: 0.8;'
+   }),
+   ig: newElem('img', {
+      src: 'https://fbcdn-photos-g-a.akamaihd.net/hphotos-ak-xpa1/t39.2082-0/p528x396/851538_506458892778613_1885463861_n.jpg',
       style: ' width: 100%; height: 100%;'
-   });
-   footerBar = newElem('div', {
+   }),
+   footerBar: newElem('div', {
       class: '',
       id: 'footerBar',
       style: 'position: absolute; width: 100%; height: 8%;bottom: 0;opacity: 0.8;'
-   });
+   })
+};
 
-   append(headerBar);
-   append(wrapping);
-   wrapping.appendChild(imgPlace);
-   imgPlace.appendChild(ig);
-   append(footerBar);
-
-   resizeGame();
-});
 
 function newElem(tag, params) {
    params = params || {};
@@ -69,20 +66,20 @@ function append(el, where) {
    (where || document.body).appendChild(el);
 }
 function remove(el) {
-   return el.parentNode ? el.parentNode.removeChild(el) : el;
+   el.parentNode.removeChild(el);
 }
-
-function nodeKill(node){
-   node.parentNode.removeChild(node);
-}
-
-
 function resizeGame() {
-   var wrapping = document.getElementById('wrapping');
-   var widthToHeight = 4 / 3;
-   var newWidth = window.innerWidth;
-   var newHeight = window.innerHeight;
-   var newWidthToHeight = newWidth / newHeight;
+   var wrapping,
+      widthToHeight,
+      newWidth,
+      newHeight,
+      newWidthToHeight;
+
+   wrapping = document.getElementById('wrapping');
+   widthToHeight = 4 / 3;
+   newWidth = window.innerWidth;
+   newHeight = window.innerHeight;
+   newWidthToHeight = newWidth / newHeight;
    if (newWidthToHeight > widthToHeight) {
       newWidth = newHeight * widthToHeight;
       wrapping.style.height = newHeight + 'px';
@@ -100,7 +97,6 @@ function resizeGame() {
 }
 window.addEventListener('resize', resizeGame, false);
 window.addEventListener('orientationchange', resizeGame, false);
-
 /**/
 
 
