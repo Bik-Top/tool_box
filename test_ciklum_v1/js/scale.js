@@ -12,6 +12,7 @@ window.onload = (function () {
    open_var.wrapping.appendChild(open_var.imgPlace);
    open_var.imgPlace.appendChild(open_var.ig);
    append(open_var.footerBar);
+
    resizeGame();
 });
 window.open_var = {
@@ -35,7 +36,9 @@ window.open_var = {
       class: '',
       id: 'footerBar',
       style: 'position: absolute; width: 100%; height: 8%;bottom: 0;opacity: 0.8;'
-   })
+   }),
+   widthToHeight: 4 / 3
+
 };
 
 
@@ -69,28 +72,24 @@ function remove(el) {
    el.parentNode.removeChild(el);
 }
 function resizeGame() {
-   var wrapping,
-      widthToHeight,
-      newWidth,
-      newHeight,
-      newWidthToHeight;
+   var newWidth,
+       newHeight,
+       newWidthToHeight;
 
-   wrapping = document.getElementById('wrapping');
-   widthToHeight = 4 / 3;
    newWidth = window.innerWidth;
    newHeight = window.innerHeight;
    newWidthToHeight = newWidth / newHeight;
-   if (newWidthToHeight > widthToHeight) {
-      newWidth = newHeight * widthToHeight;
-      wrapping.style.height = newHeight + 'px';
-      wrapping.style.width = newWidth + 'px';
+   if (newWidthToHeight > open_var.widthToHeight) {
+      newWidth = newHeight * open_var.widthToHeight;
+      open_var.wrapping.style.height = newHeight + 'px';
+      open_var.wrapping.style.width = newWidth + 'px';
    } else {
-      newHeight = newWidth / widthToHeight;
-      wrapping.style.width = newWidth + 'px';
-      wrapping.style.height = newHeight + 'px';
+      newHeight = newWidth / open_var.widthToHeight;
+      open_var.wrapping.style.width = newWidth + 'px';
+      open_var.wrapping.style.height = newHeight + 'px';
    }
-   wrapping.style.marginTop = (-newHeight / 2) + 'px';
-   wrapping.style.marginLeft = (-newWidth / 2) + 'px';
+   open_var.wrapping.style.marginTop = (-newHeight / 2) + 'px';
+   open_var.wrapping.style.marginLeft = (-newWidth / 2) + 'px';
    var imgPlace = document.getElementById('imgPlace');
    imgPlace.width = newWidth;
    imgPlace.height = newHeight;
