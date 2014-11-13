@@ -28,7 +28,7 @@ window.open_var = {
     style: 'position: absolute; width: 100%; height: 8%; top: 0; opacity: 0.8;'
   }),
   ig: newElem('img', {
-    src: 'https://fbcdn-photos-g-a.akamaihd.net/hphotos-ak-xpa1/t39.2082-0/p528x396/851538_506458892778613_1885463861_n.jpg',
+    src: '',//'https://fbcdn-photos-g-a.akamaihd.net/hphotos-ak-xpa1/t39.2082-0/p528x396/851538_506458892778613_1885463861_n.jpg',
     style: ' width: 100%; height: 100%;'
   }),
   footerBar: newElem('div', {
@@ -102,10 +102,25 @@ function resizeGame() {
   imgPlace.style.width = newWidth-coefWidth+'px';
   imgPlace.style.height = newHeight-coefHeight+'px';
 }
-window.addEventListener('resize', resizeGame, false);
-window.addEventListener('orientationchange', resizeGame, false);
+//window.addEventListener('resize', resizeGame, false);
+//window.addEventListener('orientationchange', resizeGame, false);
 
 
+
+function addEvent( element, event, callback ) {
+   if( window.addEventListener ) {
+      element.addEventListener( event, callback, false );
+   } else if( document.attachEvent ) {
+      element.attachEvent( 'on' + event, callback );
+   } else {
+      element[ 'on' + event ] = callback;
+   }
+}
+
+
+addEvent(window, 'resize', resizeGame);
+addEvent(open_var.ig, 'click', function(){this.style.boxShadow='inset 0 0 24px 3px rgb('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')'});
+addEvent(open_var.ig, 'mouseover', function(){ this.style.cursor='pointer'; this.style.boxShadow='inset 0 0 24px 3px rgb(256,'+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')'});
 /**/
 
 

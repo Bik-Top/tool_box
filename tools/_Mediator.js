@@ -3,6 +3,7 @@ var mediator = (function() {
     var events;
 
     events = {};
+   console.log(events);
     return {
         subscribe: function(event_name, callback) {
             if (!events[event_name]) {
