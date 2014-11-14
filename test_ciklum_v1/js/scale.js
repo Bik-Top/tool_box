@@ -43,6 +43,8 @@ window.open_var = {
   }),
   widthToHeight: 4 / 3
 };
+
+
 function newElem(tag, params) {
   params = params || {};
   var elem = document.createElementNS ?
@@ -73,10 +75,14 @@ function remove(el) {
    el.parentNode.removeChild(el);
   console.log('el'+el);
 }
+
+
 function resizeGame() {
   var newWidth,
     newHeight,
     newWidthToHeight,coefWidth,coefHeight;
+
+
   coefWidth = (window.innerWidth*16)/100;
   coefHeight = (window.innerHeight*16)/100;
   newWidth =  window.innerWidth;
@@ -104,6 +110,9 @@ function resizeGame() {
 }
 //window.addEventListener('resize', resizeGame, false);
 //window.addEventListener('orientationchange', resizeGame, false);
+
+
+
 
 
 
