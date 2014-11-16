@@ -55,6 +55,7 @@ function newElem(tag, params) {
   }
   return elem;
 }
+
 function attr(el, at, value) {
   at = {'for': 'htmlFor', 'class': 'className'}[at] || at;
   if (!value) {
@@ -68,9 +69,11 @@ function attr(el, at, value) {
     if (el.setAttribute)   el.setAttribute(at, value);
   }
 }
+
 function append(el, where) {
   (where || document.body).appendChild(el);
 }
+
 function remove(el) {
    el.parentNode.removeChild(el);
   console.log('el'+el);
@@ -125,11 +128,14 @@ function addEvent( element, event, callback ) {
       element[ 'on' + event ] = callback;
    }
 }
-
-
 addEvent(window, 'resize', resizeGame);
-addEvent(open_var.ig, 'click', function(){this.style.boxShadow='inset 0 0 24px 3px rgb('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')'});
-addEvent(open_var.ig, 'mouseover', function(){ this.style.cursor='pointer'; this.style.boxShadow='inset 0 0 24px 3px rgb(256,'+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')'});
+addEvent(open_var.ig, 'click', function () {
+  this.style.boxShadow = 'inset 0 0 24px 3px rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')'
+});
+addEvent(open_var.ig, 'mouseover', function () {
+  this.style.cursor = 'pointer';
+  this.style.boxShadow = 'inset 0 0 24px 3px rgb(256,' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')'
+});
 /**/
 
 
