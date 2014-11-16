@@ -105,6 +105,9 @@ function remove(el) {
   el.parentNode.removeChild(el);
   console.log('el' + el);
 }
+
+
+
 function resizer() {
   var newWidth,
     newHeight, hh,
@@ -119,8 +122,8 @@ function resizer() {
     //console.log('landscape'); //landscape
     newWidth = newHeight * open_var.widthToHeight;
     open_var.wrapping.style.width = Math.floor(newWidth - hh - hFooter) + 'px';
-    //open_var.wrapping.style.height = Math.floor(newHeight - hh - hFooter) + 'px';
-    //open_var.imgPlace.style.width = Math.floor(newWidth - hh - hFooter) + 'px';
+     open_var.wrapping.style.height = Math.floor(newHeight - hh - hFooter) + 'px';
+     open_var.imgPlace.style.width = Math.floor(newWidth - hh - hFooter) + 'px';
     open_var.imgPlace.style.height = Math.floor(newHeight - hh - hFooter) + 'px';
     open_var.wrapping.style.marginLeft = Math.floor((-newWidth + hh) / 2) + 'px';
     open_var.wrapping.style.marginTop = Math.floor((-newHeight + hh) / 2) + 'px';
@@ -132,6 +135,7 @@ function resizer() {
     open_var.button_dislike.style.height = open_var.footerBar.offsetHeight - 4 + 'px';
     open_var.button_share.style.width = open_var.footerBar.offsetHeight - 4 + 'px';
     open_var.button_share.style.height = open_var.footerBar.offsetHeight - 4 + 'px';
+
   } else {
     //console.log('portrait'); //portrait
     newHeight = newWidth / open_var.widthToHeight;

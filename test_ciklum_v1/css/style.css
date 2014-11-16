@@ -31,6 +31,17 @@ body {
 .hide {
   display: none;
 }
+.mirror {
+  -moz-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+  filter: FlipV;
+  -ms-filter: 'FlipV';
+  opacity: 0.1;
+  float: left;
+  overflow: hidden;
+}
 #wrapping {
   position: absolute;
   top: 50%;
@@ -41,26 +52,62 @@ body {
   height: 100%;
 }
 #headerBar {
-  position: absolute;
   width: 100%;
-  height: 8%;
+  text-align: center;
+  position: absolute;
   top: 0;
-  opacity: 0.4;
-  background: #000;
-}
-#footerBar {
-  position: absolute;
-  width: 100%;
-  height: 8%;
-  bottom: 0;
-  opacity: 0.4;
-  background: #000;
+  background: rgba(0, 0, 0, 0.4);
   overflow: hidden;
 }
-#footerBar span {
-  margin: 0 4%;
-  vertical-align: top;
-  padding: 1px;
+#headerBar .img_logo {
+  width: 10%;
+  margin-right: -6%;
+}
+#headerBar .fRight {
+  float: right;
+}
+#headerBar a {
+  display: inline-block;
+  width: 4%;
+  margin: 0 2%;
+}
+#headerBar a img {
+  width: 100%;
+}
+#headerBar.footer_left {
+  width: 93%;
+  right: 0;
+  background: rgba(0, 0, 0, 0);
+}
+#footerBar {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+#footerBar a {
+  display: inline-block;
+  width: 4%;
+  margin: 0 2%;
+}
+#footerBar a img {
+  width: 100%;
+}
+#footerBar.footer_left {
+  position: absolute;
+  display: table;
+  height: 100%;
+  width: 7%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+#footerBar.footer_left a {
+  display: table-row;
+}
+#footerBar.footer_left a img {
+  width: 100%;
+  margin-top: 50%;
 }
 .buttonPlace {
   text-align: center;
