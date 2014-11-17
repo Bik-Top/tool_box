@@ -36,10 +36,10 @@
 ],
    "version": "v0.2.213",
    "session": {
-      "si": "blcgx76m",
-      "": {
-         "inbox_open": "http://loopme.me/api/v2/events?et=INBOX_OPEN&rid=blcgx76m&id=blcgx76m0ed300ri3syja4w0tw",
-         "ad_close": "http://loopme.me/api/v2/events?et=AD_CLOSE&rid=blcgx76m&id="
+      "si": "titmazul",
+      "beacons": {
+         "inbox_open": "http://loopme.me/api/v2/events?et=INBOX_OPEN&rid=titmazul&id=titmazul0fjw03bqzi1sa9rfwr",
+         "ad_close": "http://loopme.me/api/v2/events?et=AD_CLOSE&rid=titmazul&id="
       }
    }
 }

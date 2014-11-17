@@ -11,14 +11,15 @@
 <script id='templ' type="templete">
     <div style=" padding: 5px;overflow: hidden;">
         <div style=" float: left;width: 300px; " >
-        {{numerickal}}. 
+        {{numerickal}}.
             <a href="{{url}}"> {{url}}</a>
             <div><b>{{description}}</b></div>
         </div>
         <b style=" float: right;width: 300px; ">{{tags}}</b>
     </div>
-        
-    </script>
+    <h1>{{lala}}</h1>
+
+</script>
 
 
 
@@ -85,6 +86,7 @@
 
       i = 0,
       len = data.length;
+    console.log(data);
     //var rex = /www/igm;
     for (; i < len; i++) {
       result.innerHTML += templete
@@ -94,7 +96,9 @@
         .replace(/{{url}}/, data[i].url)
         .replace(/{{url}}/,  data[i].url)
         .replace(/{{numerickal}}/, +[i] + 1)
-        .replace(/{{tags}}/, data[i].tags);
+        .replace(/{{tags}}/, data[i].tags)
+        .replace(/{{lala}}/, 'lasllsallslasl');
+
     }
 /*    function cheskUrl(){
       var str = data[i].url;

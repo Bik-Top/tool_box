@@ -15,22 +15,23 @@
    <script src="js/scale_v1.js" type="text/javascript" language="JavaScript"></script>-->
 
 </head>
-<body>
+<body >
+<div class="result"></div>
 <script id='templ' type="templete">
 <div id="headerBar">
   <a href="//loopme.me/" class="img_logo">
     <img class="logo"  src="http://loopme.me/assets/v2/img-logo-085ac95a2c59c5024a11ce4762f589d4.png" alt="close"/>
   </a>
   <a class="fRight" href="/">
-    <img src="{{url}}" alt="close"/>
+    <img src="{{ad_cl}}" alt="close"/>
   </a>
 </div>
 <div id="wrapping">
-  <a href="{{share_url}}" id="imgPlace">
+  <a href="{{click_url}}" id="imgPlace">
     <img id="img" src="{{image_url}}" alt="Image"/>
     <img   class="mirror" src="{{image_url}}" alt="Image"/>
   </a>
-  <a href="{{url}}" class="button_download">{{button_name}}</a>
+  <a href="{{url}}" style="background:{{download_btn_color}}" class="button_download">{{button_name}}</a>
 </div>
 <div id="footerBar">
   <a href="{{ad_like}}"><img src="img/like.png" alt="like"/></a>
@@ -40,32 +41,7 @@
 </div>
 
 </script>
-<!--
 
-<div id="headerBar">
-  <a href="//loopme.me/" class="img_logo">
-    <img class="logo"  src="http://loopme.me/assets/v2/img-logo-085ac95a2c59c5024a11ce4762f589d4.png" alt="close"/>
-  </a>
-  <a class="fRight" href="/">
-    <img src="{{description}}" alt="close"/>
-  </a>
-</div>
-<div id="wrapping">
-  <a href="/img" id="imgPlace">
-    <img id="img" src="https://fbcdn-photos-g-a.akamaihd.net/hphotos-ak-xpa1/t39.2082-0/p528x396/851538_506458892778613_1885463861_n.jpg"
-         alt="Image"/>
-    <img   class="mirror" src="https://fbcdn-photos-g-a.akamaihd.net/hphotos-ak-xpa1/t39.2082-0/p528x396/851538_506458892778613_1885463861_n.jpg"
-         alt="Image"/>
-  </a>
-  <a href="/" class="button_download">Download Now</a>
-</div>
-<div id="footerBar">
-  <a href="/"><img src="img/like.png" alt="like"/></a>
-  <a href="/"><img src="img/dislike.png" alt="dislike"/></a>
-  <a href="/"><img src="img/close.png" alt="close"/></a>
-  <a href="/"><img src="img/share.png" alt="share"/></a>
-</div>
--->
 
 </body>
 </html>

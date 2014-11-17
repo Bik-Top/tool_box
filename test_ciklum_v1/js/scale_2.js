@@ -2,7 +2,8 @@
  * Created by BikTop on 16.11.2014.
  */
 window.onload= function(){
-  resizer();
+
+  //resizer();
   addEvent(window, 'resize', resizer);
   addEvent(window, 'orientationchange', resizer);
 };
@@ -81,36 +82,44 @@ function create_el(){
 }
 
 function start(){
-  xhttp=new XMLHttpRequest();
+  var request=new XMLHttpRequest();
 
 
-  xhttp=new XMLHttpRequest();
-  xhttp.onreadystatechange=function(){
-    if (xhttp.readyState==4 && xhttp.status==200){
-      var ads=this.ads;
-      console.log(ads);
+  request=new XMLHttpRequest();
+  request.open("GET","../test_ciklum_v1/ajax/ads.json",true);
+  request.onreadystatechange=function(e){
+    if (request.readyState==4 && request.status==200){
+      var response = JSON.parse(this.responseText),
+          templete = document.querySelector('#templ').innerHTML,
+           i= 0,
+          result = document.querySelector('.result');
+      console.log();
 
-
-
-      templete = document.querySelector('#templ').innerHTML,
-        result = document.querySelector('.result'),
-
-        i = 0,
-        len = data.length;
-     // var rex = /www/igm;
-      for (; i < len; i++) {
+      for (; i < 1; i++) {
         result.innerHTML += templete
-          .replace(/{{url}}/, data[i].description)
-          .replace(/{{share_url}}/, data[i].description)
-          .replace(/{{image_url}}/, data[i].url)
-          .replace(/{{image_url}}/,  data[i].url)
-          .replace(/{{url}}/, +[i] + 1)
-          .replace(/{{button_name}}/, +[i] + 1)
-          .replace(/{{ad_dislike}}/, +[i] + 1)
-          .replace(/{{ad_hide}}/, +[i] + 1)
-          .replace(/{{ad_share}}/, data[i].tags);
+          .replace(/{{ad_cl}}/, response.session.beacons.ad_close)
+          .replace(/{{click_url}}/, response.ads[0].data.share_url)
+          .replace(/{{image_url}}/, response.ads[0].data.share_url)
+          .replace(/{{image_url}}/, response.ads[0].data.share_url)
+          .replace(/{{url}}/, response.ads[0].data.click_url)
+          .replace(/{{download_btn_color}}/, response.ads[0].data.download_btn_color)
+          .replace(/{{button_name}}/, 'Download Now');
       }
-  /*    function cheskUrl(){
+      /*for (; i < len; i++) {
+        result.innerHTML += templete
+
+          .replace(/{{description}}/, data[i].description)
+          .replace(/{{description}}/, data[i].description)
+          .replace(/{{url}}/, data[i].url)
+          .replace(/{{url}}/,  data[i].url)
+          .replace(/{{numerickal}}/, +[i] + 1)
+          .replace(/{{tags}}/, data[i].tags)
+          .replace(/{{lala}}/, 'lasllsallslasl');
+
+      }
+
+
+    function cheskUrl(){
         var str = data[i].url;
         if(str.match(rex)[0]=='www'){
           data[i].url.split('www')[1].split('/')[0].slice(1);
@@ -119,11 +128,10 @@ function start(){
       }*/
     }
   };
-  xhttp.open("GET","../test_ciklum_v1/ajax/ads.json",true);
-  xhttp.send();
+  request.send();
 }
 
-
+start();
 
 
 /*;(function() {
