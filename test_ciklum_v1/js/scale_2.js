@@ -97,23 +97,26 @@ function start(){
 
         i = 0,
         len = data.length;
-      var rex = /www/igm;
+     // var rex = /www/igm;
       for (; i < len; i++) {
         result.innerHTML += templete
-          .replace(/{{description}}/, data[i].description)
-          .replace(/{{description}}/, data[i].description)
-          .replace(/{{url}}/, data[i].url)
-          .replace(/{{url}}/,  data[i].url)
-          .replace(/{{numerickal}}/, +[i] + 1)
-          .replace(/{{tags}}/, data[i].tags);
+          .replace(/{{url}}/, data[i].description)
+          .replace(/{{share_url}}/, data[i].description)
+          .replace(/{{image_url}}/, data[i].url)
+          .replace(/{{image_url}}/,  data[i].url)
+          .replace(/{{url}}/, +[i] + 1)
+          .replace(/{{button_name}}/, +[i] + 1)
+          .replace(/{{ad_dislike}}/, +[i] + 1)
+          .replace(/{{ad_hide}}/, +[i] + 1)
+          .replace(/{{ad_share}}/, data[i].tags);
       }
-      function cheskUrl(){
+  /*    function cheskUrl(){
         var str = data[i].url;
         if(str.match(rex)[0]=='www'){
           data[i].url.split('www')[1].split('/')[0].slice(1);
         }
         else{data[i].url}
-      }
+      }*/
     }
   };
   xhttp.open("GET","../test_ciklum_v1/ajax/ads.json",true);

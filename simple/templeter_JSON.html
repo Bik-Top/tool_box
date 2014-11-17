@@ -85,7 +85,7 @@
 
       i = 0,
       len = data.length;
-    var rex = /www/igm;
+    //var rex = /www/igm;
     for (; i < len; i++) {
       result.innerHTML += templete
 
@@ -96,13 +96,13 @@
         .replace(/{{numerickal}}/, +[i] + 1)
         .replace(/{{tags}}/, data[i].tags);
     }
-    function cheskUrl(){
+/*    function cheskUrl(){
       var str = data[i].url;
       if(str.match(rex)[0]=='www'){
         data[i].url.split('www')[1].split('/')[0].slice(1);
       }
       else{data[i].url}
-    }
+    }*/
   })();
 </script>
 </body>
