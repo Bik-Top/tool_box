@@ -120,7 +120,7 @@ function resizer() {
   newWidthToHeight = newWidth / newHeight;
   if (newWidthToHeight > open_var.widthToHeight) {
     //console.log('landscape'); //landscape
-    newWidth = newHeight * open_var.widthToHeight;
+    newWidth = newHeight * open_var.widthToHeight;  //320*4/3    426,6666666666667
     open_var.wrapping.style.width = Math.floor(newWidth - hh - hFooter) + 'px';
      open_var.wrapping.style.height = Math.floor(newHeight - hh - hFooter) + 'px';
      open_var.imgPlace.style.width = Math.floor(newWidth - hh - hFooter) + 'px';

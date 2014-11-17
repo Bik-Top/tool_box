@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Стилизация Select</title>
+
+</head>
+<body>
+<div class="result" style=" width: 620px; margin: 0 auto; "></div>
+
+<script id='templ' type="templete">
+    <div style=" padding: 5px;overflow: hidden;">
+        <div style=" float: left;width: 300px; " >
+        {{numerickal}}. 
+            <a href="{{url}}"> {{url}}</a>
+            <div><b>{{description}}</b></div>
+        </div>
+        <b style=" float: right;width: 300px; ">{{tags}}</b>
+    </div>
+        
+    </script>
+
+
+
+
+
+<script type="text/javascript">
+  ;(function() {
+    var data = [
+      {
+        url: 'https://www.google.com',
+        description: 'Поисковая машина google',
+        tags: ['object', 'types']
+      },
+      {
+        url: 'http://javascript.info/tutorial/type-detection',
+        description: 'How to detect type of object. typeof, instanceof',
+        tags: ['object', 'types']
+      },
+      {
+        url: 'http://bonsaiden.github.io/JavaScript-Garden/#types',
+        description: 'Type detection',
+        tags: ['object', 'types']
+      },
+      {
+        url: 'http://www.jspatterns.com/classical-inheritance/',
+        description: 'Classical inheritance example, build on top of prototyping.',
+        tags: ['object', 'inheritance', 'prototype']
+      },
+      {
+        url: 'http://dmitrysoshnikov.com/ecmascript/javascript-the-core/',
+        description: 'Very detailed description on how javascript core works. ',
+        tags: ['core', 'javascript']
+      },
+      {
+        url: 'http://thc.org/root/phun/unmaintain.html',
+        description: 'How to write unmaintainable code. Examples are not in javascript, never the less, very useful general programming article',
+        tags: ['programming', 'code']
+      },
+      {
+        url: 'http://lostechies.com/jimmybogard/2009/01/20/javascript-decorator-pattern/',
+        description: 'Decorating functions. This is the way to change function behavior, not touching its implementation',
+        tags: ['inheritance', 'function']
+      },
+      {
+        url: 'http://dmitrysoshnikov.com/ecmascript/chapter-5-functions/',
+        description: 'Functions in details',
+        tags: ['function']
+      },
+      {
+        url: 'http://dmitrysoshnikov.com/ecmascript/chapter-4-scope-chain/',
+        description: 'Scope chain',
+        tags: ['function', 'variable', 'closure']
+      },
+      {
+        url: 'http://dmitrysoshnikov.com/ecmascript/chapter-3-this/',
+        description: 'What is "this" in functions',
+        tags: ['function', 'inheritance']
+      }
+    ];
+
+
+    templete = document.querySelector('#templ').innerHTML,
+      result = document.querySelector('.result'),
+
+      i = 0,
+      len = data.length;
+    var rex = /www/igm;
+    for (; i < len; i++) {
+      result.innerHTML += templete
+
+        .replace(/{{description}}/, data[i].description)
+        .replace(/{{description}}/, data[i].description)
+        .replace(/{{url}}/, data[i].url)
+        .replace(/{{url}}/,  data[i].url)
+        .replace(/{{numerickal}}/, +[i] + 1)
+        .replace(/{{tags}}/, data[i].tags);
+    }
+    function cheskUrl(){
+      var str = data[i].url;
+      if(str.match(rex)[0]=='www'){
+        data[i].url.split('www')[1].split('/')[0].slice(1);
+      }
+      else{data[i].url}
+    }
+  })();
+</script>
+</body>
+</html>

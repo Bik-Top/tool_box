@@ -5,9 +5,11 @@
             "enabled": true,
             "value": 0
          },
+
          "image_url": "http://i.loopme.me/9538acaf65f41f7f.png",
          "share_url": "http://loopme.me/go2/blcgx76m0ed300ri3syja4w0tw",
          "delay": 3000,
+
          "ad_hides": {
             "enabled": true,
             "value": 0

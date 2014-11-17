@@ -190,4 +190,5 @@ var previousOnload = window.onload;
 window.onload = function () {
    if (previousOnload)previousOnload();
    addReflections();
-}
+};
+

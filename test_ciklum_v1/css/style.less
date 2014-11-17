@@ -19,29 +19,63 @@ body {
   background-image: -ms-radial-gradient(center center, cover, #9e9e9e, white);
   background-image: radial-gradient(center center, cover, #9e9e9e, white);
 }
+*, body {
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
  .hide{
     display:none;
  }
 
-.mirror {-moz-transform: scaleY(-1);
-  -o-transform: scaleY(-1);
-  -webkit-transform: scaleY(-1);
-  transform: scaleY(-1);
-  filter: FlipV;
-  -ms-filter: 'FlipV';
-opacity: 0.1;
-  float: left;
-  overflow: hidden;
-}
 
 #wrapping {
    position: absolute;
    top: 50%;
    left: 50%;
+  overflow: hidden;
+  .button_download{
+    position: absolute;
+    bottom: 1%;
+    left: 10%;
+    text-align: center;
+    width: 80%;
+    text-decoration: none;
+    background: #f00;
+    color: #fff;
+    font-size: 100%;
+    margin-top: 1em;
+    border-radius: 6px;
+    line-height: 2em;
+    box-shadow: inset 0 0 0.2em 0 #000, 0 0 0.2em 0 #000;
+  }
 }
 #imgPlace {
    width: 100%;
    height: 100%;
+  display: block;
+  text-align: center;
+  margin-top: 7%;
+   #img{
+    height: 80%;
+     width: 80%;
+     border-radius: 6px;
+  }
+  .mirror {-moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: 'FlipV';
+    -ms-filter: 'FlipV';
+    opacity: 0.1;
+    overflow: hidden;
+    margin-top: -5px;
+    height: 80%;
+    width: 80%;
+    border-radius: 6px;
+  }
 }
 #headerBar  {
   width: 100%;
@@ -50,6 +84,7 @@ opacity: 0.1;
   top: 0;
   background: rgba(0, 0, 0, 0.4);
   overflow: hidden;
+  z-index: 1;
   .img_logo{
     width: 10%;
     margin-right: -6%;
@@ -75,6 +110,7 @@ opacity: 0.1;
 #footerBar {
   text-align: center;
   position: absolute;
+  z-index: 1;
   bottom: 0;
   background: rgba(0, 0, 0, 0.4);
   a{
