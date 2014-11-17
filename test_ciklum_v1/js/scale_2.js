@@ -3,7 +3,8 @@
  */
 window.onload= function(){
 
-   resizer();
+
+
   addEvent(window, 'resize', resizer);
   addEvent(window, 'orientationchange', resizer);
 };
@@ -99,8 +100,13 @@ function start(){
           .replace(/{{image_url}}/, response.ads[0].data.image_url)
           .replace(/{{url}}/, response.ads[0].data.click_url)
           .replace(/{{download_btn_color}}/, response.ads[0].data.download_btn_color)
-          .replace(/{{button_name}}/, 'Download Now');
+          .replace(/{{button_name}}/, 'Download_likead Now')
+          .replace(/{{ad_like}}/, response.ads[0].beacons.ad_like)
+          .replace(/{{ad_dislike}}/, response.ads[0].beacons.ad_hide)
+          .replace(/{{ad_hide}}/, response.ads[0].beacons.ad_hide)
+          .replace(/{{ad_share}}/, response.ads[0].beacons.ad_share);
       }
+       resizer();
     }
   };
   request.send();
