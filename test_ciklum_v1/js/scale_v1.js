@@ -75,7 +75,7 @@ var Reflection = {
    defaultHeight: 0.5, defaultOpacity: 0.5, add: function (image, options) {
       Reflection.remove(image);
       var doptions;
-      doptions = {"height": Reflection.defaultHeight, "opacity": Reflection.defaultOpacity}
+      doptions = {"height": Reflection.defaultHeight, "opacity": Reflection.defaultOpacity};
       if (options) {
          for (var i in doptions) {
             if (!options[i]) {

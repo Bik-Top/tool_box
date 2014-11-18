@@ -5,51 +5,59 @@ window.onload= function(){
 
 
 
-  addEvent(window, 'resize', resizer);
-  addEvent(window, 'orientationchange', resizer);
-};
-function resizer() {
-  var arr, _arrWxH = []; //arr [320, 480, 0.6666666666666666, 1.3333333333333333, 640, 240]
-  _arrWxH.push( window.innerWidth,
-                window.innerHeight,
-                window.innerWidth/window.innerHeight,
-                4 / 3,
-                window.innerHeight*(4/3),
-                window.innerWidth /(4/3));
-  arr = _arrWxH.splice(0, _arrWxH.length);
-  if (arr[2] > arr[3]) {
-    landscape(arr);
-  }
-  else {
-    portrait(arr);
-  }
 
+   addEvent(window, 'resize', resizer);
+   addEvent(window, 'orientationchange', resizer);
+};
+
+
+function resizer(e) {
+  var trig=0;
+  if(!e&&!trig){
+     var arr, _arrWxH = []; //arr [320, 480, 0.6666666666666666, 1.3333333333333333, 640, 240]
+     _arrWxH.push( window.innerWidth,
+        window.innerHeight,
+           window.innerWidth/window.innerHeight,
+           4 / 3,
+           window.innerHeight*(4/3),
+           window.innerWidth /(4/3));
+     arr = _arrWxH.splice(0, _arrWxH.length);
+     if (arr[2] > arr[3]) {
+        landscape(arr);
+     }
+     else {
+        portrait(arr);
+     }
+  } else{trig=1}
   return false;
 }
 
 function landscape(arr) {
-  var hederLand = document.getElementById('headerBar');
-  var footerLand = document.getElementById('footerBar');
-  var wrapping = document.getElementById('wrapping');
-  var imgPlace = document.getElementById('imgPlace');
-  var  butt = document.querySelector('.button_download');
-  var coefent =hederLand.offsetHeight+ butt.offsetHeight+14;
-  wrapping.style.width= arr[4]+'px';
-  wrapping.style.height= arr[1]+'px';
-    imgPlace.style.width= arr[4]+'px';
-    imgPlace.style.height= arr[1]+'px';
-  wrapping.style.marginTop= (-arr[1]/2)+'px';
-  wrapping.style.marginLeft= (-arr[4]/2)+'px';
+  var hederLand = document.getElementById('headerBar'),
+      footerLand = document.getElementById('footerBar'),
+      wrapping = document.getElementById('wrapping'),
+      imgPlace = document.getElementById('imgPlace'),
+      butt = document.querySelector('.button_download');
+      var coefent =hederLand.offsetHeight+ butt.offsetHeight+14;
+      wrapping.style.width= arr[4]+'px';
+      wrapping.style.height= arr[1]+'px';
+      imgPlace.style.width= arr[4]+'px';
+      imgPlace.style.height= arr[1]+'px';
+      wrapping.style.marginTop= (-arr[1]/2)+'px';
+      wrapping.style.marginLeft= (-arr[4]/2)+'px';
+      addClass(hederLand, 'footer_left');
+      addClass(footerLand, 'footer_left');
 
-  addClass(hederLand, 'footer_left');
-  addClass(footerLand, 'footer_left');
+ 
+
   return false;
 }
+
 function portrait(arr) {
-  var hederPort = document.getElementById('headerBar');
-  var footerPort = document.getElementById('footerBar');
-  var wrapping = document.getElementById('wrapping');
-  var imgPlace = document.getElementById('imgPlace');
+  var hederPort = document.getElementById('headerBar'),
+      footerPort = document.getElementById('footerBar'),
+      wrapping = document.getElementById('wrapping'),
+      imgPlace = document.getElementById('imgPlace');
 
   wrapping.style.width= arr[0]+'px';
   wrapping.style.height= arr[5]+'px';
@@ -81,9 +89,6 @@ function create_el(){
 
 function start(){
   var request=new XMLHttpRequest();
-
-
-  request=new XMLHttpRequest();
   request.open("GET","../test_ciklum_v1/ajax/ads.json",true);
   request.onreadystatechange=function(e){
     if (request.readyState==4 && request.status==200){
@@ -106,6 +111,7 @@ function start(){
           .replace(/{{ad_hide}}/, response.ads[0].beacons.ad_hide)
           .replace(/{{ad_share}}/, response.ads[0].beacons.ad_share);
       }
+       addEvent(document.querySelector('.fRight'), 'click', nodeKill);
        resizer();
     }
   };
@@ -126,4 +132,18 @@ function addEvent(element, event, callback) {
   } else {
     element['on' + event] = callback;
   }
+}
+
+
+function nodeKill(e, node){
+   console.log(node);
+   e.preventDefault();
+   e.stopPropagation();
+   if(!node){
+      node= document.getElementById('wrapping');
+      node.parentNode.removeChild(node);
+      node.innerHTML='<h2>Objekt removed</h2>'
+   }
+
+   return resizer(1);
 }
