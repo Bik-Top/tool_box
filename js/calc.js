@@ -4,7 +4,7 @@
  *           File:  calc
  **/
 "use strict";
-/*window.onload = function () {
+window.onload = function () {
    window.addEventListener('resize', resizer, false);
 };
 var arr =[];
@@ -40,10 +40,7 @@ function Result(tag, nod) {
       }
 
    }
-}*/
+}
 
 
-window.onload = function () {
-
-};
 
