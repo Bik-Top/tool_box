@@ -1,13 +1,22 @@
-/* Complex parts */
-
+/**
+ * @returns {SubSystem1}
+ * @constructor
+ *  SubSystem1 {method1: function}
+ */
 function SubSystem1() {
-    this.method1 = function() {
+   this.method1 = function() {
         console.log("вызван SubSystem1.method1");
     };
     return this;
 }
-
+/**
+ *
+ * @returns {SubSystem2}
+ * @constructor
+ * SubSystem2 {method2: function, methodB: function}
+ */
 function SubSystem2() {
+
     this.method2 = function() {
         console.log("вызван SubSystem2.method2");
     };
@@ -16,9 +25,11 @@ function SubSystem2() {
     };
     return this;
 }
-
-/* Facade */
-
+/**
+ * @returns {Facade}
+ * @constructor
+ * Facade {m1: function, m2: function}
+ */
 function Facade() {
     var s1 = new SubSystem1(),
         s2 = new SubSystem2();
@@ -35,9 +46,10 @@ function Facade() {
     };
     return this;
 }
-
-/* Client */
-
+/**
+ *  Entry point
+ *  Client
+ */
 function test() {
     var facade = new Facade();
     facade.m1();
