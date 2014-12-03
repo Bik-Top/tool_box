@@ -1,9 +1,19 @@
+/**
+ *
+ * @constructor
+ */
 function Foo() {
   //...
 }
 function Bar() {
   //...
 }
+
+/**
+ *
+ * @param type
+ * @returns {*}
+ */
 function factory(type) {
   if (type == '1') {
     return new Foo();

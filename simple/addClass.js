@@ -22,5 +22,30 @@ function addClass(node, name) {
         });
         return uniqueArray.length === arr.length;
     }
-// мой велосипед;)
+/**
+ *
+ * @param node
+ * @param className
+ */
+function addClass(node, className) {
+   if ((node) && (className)) {
+      var classArr = node.className.split(' ');
+
+      if (Object.prototype.toString.call(className) !== '[object Array]') {
+         className = className.split(' ');
+      }
+
+      className = className.filter(function(iArr) {
+         return classArr.indexOf(iArr) === -1;
+      });
+
+      className.forEach(function(iArr) {
+         classArr.push(iArr);
+      });
+
+      node.className = classArr.join(' ');
+
+   }
+
+}
 
