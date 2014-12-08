@@ -49,3 +49,17 @@ function addClass(node, className) {
 
 }
 
+
+/**
+ *
+ * @param o
+ * @param c
+ */
+function addClass(o, c) {
+   var re = new RegExp("(^|\\s)" + c + "(\\s|$)", "g");
+   if (re.test(o.className)) return
+   o.className = (o.className + " " + c).replace(/\s+/g, " ").replace(/(^ | $)/g, "");
+}
+
+
+

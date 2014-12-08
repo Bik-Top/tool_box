@@ -36,3 +36,14 @@ function removeClass(node, className) {
       node.className = classArr.join(' ');
    }
 }
+
+/**
+ *
+ * @param node
+ * @param className
+ */
+function removeClass(node, className){
+   var re = new RegExp("(^|\\s)" + className + "(\\s|$)", "g");
+   node.className = node.className.replace(re, "$1").replace(/\s+/g, " ").replace(/(^ | $)/g, "");
+}
+// реализация взята с http://javascript.ru/

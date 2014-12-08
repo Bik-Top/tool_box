@@ -62,7 +62,27 @@ var arr =[],
       }
    }
 }());
+var trig= 0, trig2=0;
+var as = setInterval(anime, 120);
+function anime(){
+
+   console.clear();
+   if(trig===1){
+      console.log( '%c /\\/\\',  "color: #FF0;background: #5A5A5A;font-size: 14pt;font-style: italic; margin-left: 20%;border: solid 1px #f00; ");
+      trig=0;
+      trig2+=1;
+   }
+   else{
+      console.log( '%c \\/\\/',  "color: #FF0;background: #5A5A5A;font-size: 14pt;font-style: italic; margin-left: 20%;border: solid 1px #f00; " );
+      trig=1;
+      trig2+=1;
+   }
+
+}
 function resizer(e) {
+
+
+
 
    //console.log(e.timeStamp);
    var start, stop;
@@ -72,7 +92,8 @@ function resizer(e) {
    arr=arr.slice(arr.length-2);
    stop = arr[1];
 
-   console.log( '%cstart: '+start+' stop: '+ stop,  "color:#f00;padding:10px; margin-right:-15px;border: dotted 2px #f0f");
+
+
 
    var width = window.innerWidth,
       height = window.innerHeight,
