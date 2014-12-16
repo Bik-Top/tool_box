@@ -91,7 +91,7 @@ function SignSetup(w, sUID) {
         'codebase="' + (window.OCXCODEBASE || (sWinPath + $(w, 'CodeBase').value)) + '#version=' + (window.OCXVERSION || $(w, 'CryptoVersion').value) + '">' +
         '<PARAM NAME="DestLocation" VALUE="' + (window.OCXServerName || $(w, 'ServerName').value) + '"></PARAM>' +
         sPrm +
-        '<PARAM NAME="InputsFrame" VALUE="RT_IC_MAINW">' +
+        '<PARAM NAME="InputsFrame" VALUE="RT_IC_MAINW"></PARAM>' +
         '<PARAM NAME="decodedXML" VALUE="true"/>' +
         '<PARAM NAME="ShowErrorDialog" VALUE="true"/>' +
         '<PARAM NAME="version" VALUE="3"/>' +
