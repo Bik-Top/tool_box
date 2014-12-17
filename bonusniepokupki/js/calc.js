@@ -17,20 +17,30 @@
             'maxNum': [1, 0, 0, 0, 0, 0],
             'town_activ': ['0 0', '-86px 0', '-172px 0', '-258px 0', '-344px 0', '-430px 0'],
             'town_lock':  ['0 -66px', '-86px -66px', '-172px -66px', '-258px -66px', '-344px -66px', '-430px -66px'],
-            'txt':  ['praga', 'london', 'london', 'pari', 'greec', 'dubai', 'barselona'],
-            'activOrnot': function (i) {
-               if (this.maxNum[i]) {
-                  return 'active';
-               }
-               else {
-                  return '';
-               }
+            'txt':  ['praga', 'polsha', 'london', 'pari', 'greec', 'dubai', 'barselona'],
+            noda:function(a){
+               //$(a).css({'width':'83px'})
+               //console.log($('li').css({'background':'#f0f'}) );
+               //console.log(a.css({'background':'#f0f'}) );
+                      as = $(a).parent()
+              // a.style.width='20px'
+              // console.log( a);
+               this.width()
+            },
+            width:function(){
+                var a=529;
+               var b= this.maxNum.length;
+                var margin=((a/b)-83)+'px';
+                console.log(margin);
             },
             clasCreat: function (i) {
-               var cass;
-               cass = this.class_child_g + ' ' + 'box' + (i + 1) + ' ' + this.activOrnot(i);
+               var cass, act;
+               (this.maxNum[i]) ? act = 'active' : act = ''; 
+               cass = this.class_child_g + ' ' + 'box' + (i + 1) + ' ' + act;
+
                return cass;
             },
+
             li_li: function () {
                var arr = [], i = 0,
                   cla = [],
@@ -39,6 +49,7 @@
 
 
                for (; i < this.maxNum.length; i += 1) {
+
                   if(this.maxNum[i] === 1){
                      cla.push(this.clasCreat(i));
                      arr.push( this.createEl('li', cla.shift(), {'background-position': this.town_activ[i],
@@ -47,7 +58,7 @@
                         prepend(
                            this.createEl('div','tex').text(this.txt[i])
                         )
-                     ) ;
+                     ) ;  
                   }
                   else if (this.maxNum[i] === 0) {
                      cla.push(this.clasCreat(i));
@@ -69,9 +80,10 @@
                   posLock.push(this.town_lock[i]);
                   posAct.push(this.town_activ[i]);
                }
-              // console.log(arr);
+
                return arr;
             },
+
             scale:function(options){
 
                var arr =[];
@@ -91,16 +103,17 @@
 
                return arr;
             },
+
             createEl:function(el, clasName, param){
-               var e;
-               if(param){
-                  e = $('<'+el+'></'+el+'>').addClass(clasName).css(param);
-               }
-               else{
-                  e = $('<'+el+'></'+el+'>').addClass(clasName);
+               var e, noda;
+               (param) ? e = $('<' + el + '></' + el + '>').addClass(clasName).css(param) : e = $('<' + el + '></' + el + '>').addClass(clasName);
+               if(el==='li'){
+                  noda=e[0];
+                  this.noda( noda )
                }
                 return e;
             },
+
             grid: function () {
                var arr = [], i = 0;
 
@@ -127,7 +140,7 @@
                function a(ell){
                  // console.log(ell);
                    i+=1;
-                  console.log(i);
+                  //console.log(i);
                   return (ell/5) ;
                }
                a(ell);
@@ -163,7 +176,7 @@
 window.onload = function () {
    $('.face_scale>h4').tooltip('remowe');
    $('.face_scale>ul').tooltip('remowe');
-   $('.face_scale').tooltip( { 'maxNum': [-1,1, 0, 0, 0, 0],
+   $('.face_scale').tooltip( { 'maxNum': [1,1, 0, 0, 0, 1],
       'travel': 'air_travel',
       'fill': {'width':'0%'},
       'bonuses': 'bonuses',
