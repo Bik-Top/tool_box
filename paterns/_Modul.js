@@ -4,8 +4,10 @@
  *           File:  Modul
  **/
 "use strict";
+
 /**
- * @type module
+ *
+ * @type {{method1, method2, method3}}
  */
 var module = function () {
    function method1() {
