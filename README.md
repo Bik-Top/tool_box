@@ -21,7 +21,7 @@
 [ remove_nod](https://github.com/Bik-Top/tool_box/blob/master/tools/remove_nod.js)
 
 ==============
-<!--[***my tool box for js***](https://github.com/Bik-Top/tool_box/tree/master/simple)-->
+ [***my helps***](https://github.com/Bik-Top/tool_box/tree/master/simple) 
 
 [ addClass](https://github.com/Bik-Top/tool_box/blob/master/simple/addClass.js)
 
@@ -35,17 +35,4 @@
 
 [ removeClass](https://github.com/Bik-Top/tool_box/blob/master/simple/removeClass.js)
 
-<!--[ flatten_v2](https://github.com/Bik-Top/tool_box/blob/master/simple/flattenV2.js)
-
-
-[removeClass](https://github.com/Bik-Top/tool_box/blob/master/simple/removeClass.js)
-
-[removeClass_v2](https://github.com/Bik-Top/tool_box/blob/master/simple/removeClass_v2.js)
-
-[toMatrix](https://github.com/Bik-Top/tool_box/blob/master/simple/toMatrix.js)
-
-[toSearchString](https://github.com/Bik-Top/tool_box/blob/master/simple/toSearchString.js)
-
-***[TOTAl_part_1](https://github.com/Bik-Top/tool_box/blob/master/simple/TOTAl_part_1.js)*** //
-***[TOTAl_part_2](https://github.com/Bik-Top/tool_box/blob/master/simple/TOTAl_part_2.js)***
--->
+ 
