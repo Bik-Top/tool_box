@@ -1,5 +1,5 @@
 #tool_box  
-==============
+
 
 [***Some javascript patterns***](https://github.com/Bik-Top/tool_box/tree/master/tools)
 
