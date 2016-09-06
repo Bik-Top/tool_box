@@ -1,9 +1,9 @@
-#tool_box
-
-  
-  
+#tool_box  
 ==============
-[***my tool box for js***](https://github.com/Bik-Top/tool_box/tree/master/tools)
+
+[***Some javascript patterns***](https://github.com/Bik-Top/tool_box/tree/master/tools)
+
+[_Modul](https://github.com/Bik-Top/tool_box/blob/master/tools/Modul.js)
 
 [_Fasad](https://github.com/Bik-Top/tool_box/blob/master/tools/_Fasad.js)
 
