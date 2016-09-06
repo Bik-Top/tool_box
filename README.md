@@ -18,7 +18,7 @@
   + **Типовые решения**
   + **На рассмотрение**-->
   
-[***Some javascript patterns***](https://github.com/Bik-Top/tool_box/tree/paterns/tools)
+[***Some javascript patterns***](https://github.com/Bik-Top/tool_box/tree/master/paterns)
 
 [_Modul](https://github.com/Bik-Top/tool_box/blob/master/paterns/_Modul.js)
 
