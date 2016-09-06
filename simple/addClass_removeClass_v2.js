@@ -1,5 +1,7 @@
 /**
  *
+ * @type {{init}}
+ * @description triggered Class
  */
    var Module = function () {
 
@@ -50,6 +52,7 @@
             });
          }
       }
+
       return  {
          init:hasClass
       }
