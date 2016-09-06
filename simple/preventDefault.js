@@ -4,11 +4,17 @@
  *           File:  preventDefault
  **/
 "use strict";
-
+/**
+ *
+ * @param event
+ */
 function preventDefault(event) {
-   if (event.preventDefault) {
-      event.preventDefault();
-   } else {
-      event.returnValue = false;
-   }
+    if (event.preventDefault) {
+        event.preventDefault();
+    } else {
+        event.returnValue = false;
+    }
 }
+
+// Usage:
+// <a class="button" onclick="event.preventDefault()" href="#"
