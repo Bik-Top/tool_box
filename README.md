@@ -3,7 +3,7 @@
 
 [***Some javascript patterns***](https://github.com/Bik-Top/tool_box/tree/paterns/tools)
 
-[_Modul](https://github.com/Bik-Top/tool_box/blob/master/paterns/Modul.js)
+[_Modul](https://github.com/Bik-Top/tool_box/blob/master/paterns/_Modul.js)
 
 [_Fasad](https://github.com/Bik-Top/tool_box/blob/master/paterns/_Fasad.js)
 
@@ -21,7 +21,7 @@
 [ remove_nod](https://github.com/Bik-Top/tool_box/blob/master/tools/remove_nod.js)
 
 ==============
-[***my tool box for js***](https://github.com/Bik-Top/tool_box/tree/master/simple)
+<!--[***my tool box for js***](https://github.com/Bik-Top/tool_box/tree/master/simple)-->
 
 [ addClass](https://github.com/Bik-Top/tool_box/blob/master/simple/addClass.js)
 
